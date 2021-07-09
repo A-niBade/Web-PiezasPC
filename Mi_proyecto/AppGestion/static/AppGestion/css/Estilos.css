@@ -1,0 +1,31 @@
+.card1
+{
+    background-color: white;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.pt
+{
+    padding-top: .10px !important;
+}
+
+.pl
+{
+    padding-left: .10px !important;
+}
+
+.pr
+{
+    padding-right: .10px !important;
+}
+
+.pb
+{
+    padding-bottom: .10px !important;
+}
+
+.paddingp
+{
+    padding-bottom: 1px;
+}

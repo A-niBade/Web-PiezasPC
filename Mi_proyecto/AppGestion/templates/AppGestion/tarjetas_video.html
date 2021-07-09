@@ -1,0 +1,40 @@
+{% extends 'AppGestion/base.html'%}
+
+{% load static %}
+
+{% load humanize%}
+
+{% block contenido %}
+
+<div class="card card1 mt-1 ml-3 mr-3 mb-3">
+    
+
+    <h1 class="font-weight-light pt-2 pb-2 pl-3">
+        Tarjetas de Video
+    </h1>
+
+    <div class="card-block d-flex justify-content-between flex-wrap mt-1 ml-3 mr-3">
+        
+        {% for t in tarjeta %}
+            <div class="d-flex flex-column">            
+                    <div class="card border-0 pr-5 pl-5 pb-3">
+                        <h4 class="font-weight-normal">{{ t.nombre }}</h4>
+                        {% if t.imagen %}
+                        <img class="card-img-top w-75 rounded mx-auto" src="{{ t.imagen.url }}" alt="Card image cap" >
+                        {% endif%}
+                        <div class="card-text">
+                            <ul class="list-unstyled">
+                                <li> <strong>GPU</strong> {{ t.gpu }}</li>
+                                <li><strong>Memoria</strong> {{ t.gb }} GB</li>
+                                <li><strong>Bus</strong> {{ t.bus }}</li>
+                            </ul>
+                            <h5 class="text-danger">$ {{ t.precio | intcomma }}</h5>
+                        </div>
+                    </div>
+            </div>
+        {% endfor %}
+
+    </div>    
+</div>
+
+{% endblock %}

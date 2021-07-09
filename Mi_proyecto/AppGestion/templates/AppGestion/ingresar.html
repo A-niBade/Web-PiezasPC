@@ -1,0 +1,38 @@
+{% extends 'AppGestion/base.html'%}
+
+{% block contenido %}
+
+<div class="row">
+
+    <div class="col-12 col-md-4 offset-md-4 pt-2 pb-3 pl-3 ">
+        <br>
+        <h2 class="text-center display-4"> Ingresar Componente</h2>
+        <hr>
+       
+        <div class="card card1">
+
+            
+    
+            <ul class="nav justify-content-center pt-2 pb-2 pl-3">
+                
+                <li class="nav-item">
+                <a class="nav-link active" href="{% url 'ingresar_placa'%}">Placa Madre</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'ingresar_tarjeta' %}">Tarjeta de Video</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'ingresar_procesador' %}">Procesador</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+    {% block contenido_ingresos%}
+
+    {% endblock%}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'AppGestion/base.html'%}
+
+{% load static %}
+
+{% load humanize%}
+
+{% block contenido %}
+
+<div class="card card1 mt-1 ml-3 mr-3 mb-3">
+    
+
+    <h1 class="font-weight-light pt-2 pb-2 pl-3">
+        Procesadores
+    </h1>
+
+    <div class="card-block d-flex justify-content-between flex-wrap mt-1 ml-3 mr-3">
+        
+        {% for p in proce %}
+            <div class="d-flex flex-column">
+                <div class="card border-0 pr-5 pl-5 pb-3">
+                    <h4 class="font-weight-normal">{{ p.nombre}}</h4>
+                    {% if p.imagen %}
+                    <img class="card-img-top w-100" src="{{ p.imagen.url }}" alt="Card image cap" >
+                    {% endif %}
+                    <div class="card-text">
+                        <ul class="list-unstyled">
+                            <li> <strong>Frecuencia</strong> {{p.frecuencia}}</li>
+                            <li><strong>Núcleos/Hilos</strong> {{p.nucleos}} núcleos / {{p.hilos}} hilos</li>
+                            <li><strong>Socket</strong> {{p.socket}}</li>
+                            <li><strong>Arquitectura</strong> {{p.arquitectura}}</li>
+                        </ul>
+                        <h5 class="text-danger">$ {{p.precio | intcomma}}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>    
+</div>
+
+{% endblock %}
